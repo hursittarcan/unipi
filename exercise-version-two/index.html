@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Logical Errors in Selection Structures</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Logical Errors in Selection Structures</h1>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>A <strong>logical error</strong> is a mistake in a program’s logic that causes incorrect behavior or output, even though the code runs without crashing. These errors are common in <strong>selection structures</strong> like <code>if</code>, <code>else if</code>, and <code>else</code>.</p>
+    </section>
+
+    <hr />
+
+    <!-- Exercise Template -->
+    <section>
+        <h2>Exercise 1: Grading System</h2>
+        <pre><code>
+let score = 75;
+
+if (score > 90)
+  console.log("Grade: A");
+else if (score > 80)
+  console.log("Grade: B");
+else if (score > 70)
+  console.log("Grade: C");
+else
+  console.log("Grade: F");
+      </code></pre>
+        <p>What will this code output?</p>
+        <div class="options">
+            <button onclick="checkAnswer(1, 3)">Grade: A</button>
+            <button onclick="checkAnswer(1, 2)">Grade: B</button>
+            <button onclick="checkAnswer(1, 3)">Grade: C</button>
+            <button onclick="checkAnswer(1, 4)">Grade: F</button>
+        </div>
+        <div id="feedback1" class="feedback"></div>
+    </section>
+
+    <section>
+        <h2>Exercise 2: Login Logic</h2>
+        <pre><code>
+let username = "admin";
+let password = "1234";
+
+if (username === "admin")
+  if (password === "admin")
+    console.log("Login successful");
+  else
+    console.log("Invalid username");
+      </code></pre>
+        <p>What is the logical error in this code?</p>
+        <div class="options">
+            <button onclick="checkAnswer(2, 1)">Checks password before username</button>
+            <button onclick="checkAnswer(2, 2)">Uses == instead of ===</button>
+            <button onclick="checkAnswer(2, 3)">The else is attached to the wrong if</button>
+            <button onclick="checkAnswer(2, 4)">Username is wrong</button>
+        </div>
+        <div id="feedback2" class="feedback"></div>
+    </section>
+
+    <section>
+        <h2>Exercise 3: Age Category</h2>
+        <pre><code>
+let age = 17;
+
+if (age < 18)
+  console.log("Child");
+else if (age < 13)
+  console.log("Teen");
+else
+  console.log("Adult");
+      </code></pre>
+        <p>What is wrong with this logic?</p>
+        <div class="options">
+            <button onclick="checkAnswer(3, 1)">It should check age > 18</button>
+            <button onclick="checkAnswer(3, 2)">Conditions are in the wrong order</button>
+            <button onclick="checkAnswer(3, 3)">Should use switch-case</button>
+            <button onclick="checkAnswer(3, 4)">It crashes</button>
+        </div>
+        <div id="feedback3" class="feedback"></div>
+    </section>
+
+    <section>
+        <h2>Exercise 4: Discount Logic</h2>
+        <pre><code>
+let total = 100;
+
+if (total > 50)
+  console.log("5% discount");
+else if (total > 100)
+  console.log("10% discount");
+      </code></pre>
+        <p>Why is the 10% discount never applied?</p>
+        <div class="options">
+            <button onclick="checkAnswer(4, 1)">Wrong comparison operator</button>
+            <button onclick="checkAnswer(4, 2)">Should check > 100 first</button>
+            <button onclick="checkAnswer(4, 3)">Else is missing</button>
+            <button onclick="checkAnswer(4, 4)">Should use ==</button>
+        </div>
+        <div id="feedback4" class="feedback"></div>
+    </section>
+
+    <section>
+        <h2>Exercise 5: Number Check</h2>
+        <pre><code>
+let num = 0;
+
+if (num > 0)
+  console.log("Positive");
+else if (num < 0)
+  console.log("Negative");
+else if (num === 0)
+  console.log("Zero");
+      </code></pre>
+        <p>Why does this look wrong?</p>
+        <div class="options">
+            <button onclick="checkAnswer(5, 1)">Too many ifs</button>
+            <button onclick="checkAnswer(5, 2)">Zero is never reached</button>
+            <button onclick="checkAnswer(5, 3)">Should use else at the end</button>
+            <button onclick="checkAnswer(5, 4)">Syntax error</button>
+        </div>
+        <div id="feedback5" class="feedback"></div>
+    </section>
+
+    <hr />
+
+    <section>
+        <h2>Summary</h2>
+        <ul>
+            <li>Logical errors are tricky because they don’t crash your code, but still produce incorrect results.</li>
+            <li>Carefully order your conditions in selection structures.</li>
+            <li>Always test different input cases to catch logical mistakes.</li>
+        </ul>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

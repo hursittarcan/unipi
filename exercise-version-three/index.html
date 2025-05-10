@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Errors in Selection Structures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Logical Errors in Selection Structures</h1>
+    <p>A learning resource for programming students</p>
+</header>
+
+<main>
+    <section class="intro">
+        <h2>What are Logical Errors?</h2>
+        <p>Logical errors occur when your code syntax is correct (it runs without crashing), but the program's behavior is incorrect due to flaws in your logic. These errors are often harder to spot because the program still executes without error messages.</p>
+
+        <div class="info-box">
+            <h3>Common Logical Errors in Selection Structures:</h3>
+            <ul>
+                <li>Using assignment (=) instead of comparison (==, ===)</li>
+                <li>Incorrect compound conditions with AND (&&) and OR (||)</li>
+                <li>Improper nesting of if/else statements</li>
+                <li>Missing else clauses creating logic gaps</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="examples">
+        <h2>Common Error Examples</h2>
+
+        <div class="example">
+            <h3>1. Assignment vs. Comparison</h3>
+            <div class="code-container">
+                <div class="error-code">
+                    <h4>Incorrect Code:</h4>
+                    <pre>
+// Check if age is 18
+if (age = 18) {
+    console.log("You are 18 years old");
+}
+</pre>
+                    <p class="explanation">This code assigns 18 to age and always evaluates to true</p>
+                </div>
+                <div class="correct-code">
+                    <h4>Correct Code:</h4>
+                    <pre>
+// Check if age is 18
+if (age === 18) {
+    console.log("You are 18 years old");
+}
+</pre>
+                    <p class="explanation">This correctly compares age to 18</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>2. Independent vs. Mutually Exclusive Conditions</h3>
+            <div class="code-container">
+                <div class="error-code">
+                    <h4>Incorrect Code:</h4>
+                    <pre>
+// Determine grade
+if (score < 60) {
+    grade = "F";
+}
+if (score < 70) {
+    grade = "D";
+}
+if (score < 80) {
+    grade = "C";
+}
+</pre>
+                    <p class="explanation">For score = 65, grade will be "D", but for score = 55, it will run through all conditions and grade will end up as "C"</p>
+                </div>
+                <div class="correct-code">
+                    <h4>Correct Code:</h4>
+                    <pre>
+// Determine grade
+if (score < 60) {
+    grade = "F";
+} else if (score < 70) {
+    grade = "D";
+} else if (score < 80) {
+    grade = "C";
+}
+</pre>
+                    <p class="explanation">Using else-if ensures each score only matches one grade range</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>3. Missing Braces and Improper Nesting</h3>
+            <div class="code-container">
+                <div class="error-code">
+                    <h4>Incorrect Code:</h4>
+                    <pre>
+// Apply discount
+if (isMember)
+    if (isPremium)
+        discount = 20;
+else
+    discount = 5;
+</pre>
+                    <p class="explanation">The else attaches to the nearest if (isPremium), so non-premium members get 5% discount but non-members get no discount</p>
+                </div>
+                <div class="correct-code">
+                    <h4>Correct Code:</h4>
+                    <pre>
+// Apply discount
+if (isMember) {
+    if (isPremium) {
+        discount = 20;
+    } else {
+        discount = 10;
+    }
+} else {
+    discount = 5;
+}
+</pre>
+                    <p class="explanation">Proper braces clarify the structure: premium members get 20%, regular members 10%, and non-members 5%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="interactive">
+        <h2>Try It Yourself</h2>
+        <div class="demo-container">
+            <div class="code-editor">
+                <h3>Code:</h3>
+                <textarea id="code-input">// Fix the logical errors in this code
+function categorizeAge(age) {
+    let category;
+
+    if (age < 13) {
+        category = "Child";
+    }
+    if (age < 20) {
+        category = "Teenager";
+    }
+    if (age < 65) {
+        category = "Adult";
+    }
+    if (age >= 65) {
+        category = "Senior";
+    }
+
+    return category;
+}</textarea>
+                <div class="input-group">
+                    <label for="test-age">Test with age:</label>
+                    <input type="number" id="test-age" value="15">
+                    <button id="run-btn">Run Code</button>
+                </div>
+            </div>
+            <div class="result-container">
+                <h3>Result:</h3>
+                <div id="code-output"></div>
+                <div id="hint-box" class="hint-box">
+                    <button id="hint-btn">Get Hint</button>
+                    <div id="hint-text" class="hidden">
+                        <p>Look at the independent if statements. For age = 15, which conditions are true?</p>
+                        <p>Try using else-if to make the conditions mutually exclusive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quiz">
+        <h2>Quiz</h2>
+        <div class="quiz-container">
+            <div id="quiz-question">
+                <h3>Question 1 of 3:</h3>
+                <p>What is wrong with this code?</p>
+                <pre>if (score = 100) {
+    console.log("Perfect score!");
+}</pre>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q1" value="a"> Missing semicolon
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="b"> Using assignment (=) instead of comparison (==)
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="c"> Missing else clause
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="d"> Nothing is wrong
+                    </label>
+                </div>
+                <button id="check-btn">Check Answer</button>
+            </div>
+            <div id="quiz-feedback"></div>
+            <button id="next-btn" class="hidden">Next Question</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Created by Student ID: 12345 for Programming Course Project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
