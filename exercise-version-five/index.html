@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Errors Notebook</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="notebook">
+    <div class="page-header">
+        <h1>My Programming Notebook</h1>
+        <h2>Logical Errors in Selection Structures</h2>
+        <p class="student-info">Student: Jane Doe | ID: CS12345</p>
+    </div>
+
+    <div class="page-content">
+        <div class="note-section">
+            <h3 class="note-title">What are Logical Errors? 🤔</h3>
+            <p>Logical errors are bugs in my code that don't cause syntax errors or crashes, but make my program behave incorrectly. The code runs, but it doesn't do what I want it to do!</p>
+
+            <div class="sticky-note">
+                <p><strong>Remember:</strong> Logical errors are the hardest to find because the program doesn't tell me there's a problem!</p>
+            </div>
+        </div>
+
+        <div class="note-section">
+            <h3 class="note-title">Common Logical Errors in If Statements ⚠️</h3>
+            <ul class="handwritten-list">
+                <li>Using = (assignment) instead of == or === (comparison)</li>
+                <li>Forgetting to use curly braces { } with multi-line blocks</li>
+                <li>Using separate if statements when I need else-if</li>
+                <li>Incorrect boolean logic with AND (&&) and OR (||)</li>
+                <li>Off-by-one errors in boundary conditions</li>
+            </ul>
+        </div>
+
+        <div class="note-section">
+            <h3 class="note-title">Error #1: Assignment vs. Comparison 🔄</h3>
+            <div class="code-note">
+                <div class="code-wrong">
+                    <p class="comment">// This is WRONG!</p>
+                    <pre>if (x = 10) {
+    console.log("x is 10");
+}</pre>
+                    <p class="annotation">This assigns 10 to x and always evaluates to true!</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="code-right">
+                    <p class="comment">// This is RIGHT!</p>
+                    <pre>if (x === 10) {
+    console.log("x is 10");
+}</pre>
+                    <p class="annotation">This checks if x equals 10</p>
+                </div>
+            </div>
+            <div class="doodle">
+                <p>= is assignment</p>
+                <p>== is comparison (value)</p>
+                <p>=== is strict comparison (value AND type)</p>
+            </div>
+        </div>
+
+        <div class="note-section">
+            <h3 class="note-title">Error #2: Missing Braces 📎</h3>
+            <div class="code-note">
+                <div class="code-wrong">
+                    <p class="comment">// This is WRONG!</p>
+                    <pre>if (isRaining)
+    console.log("Take umbrella");
+    console.log("Wear boots");</pre>
+                    <p class="annotation">Only the first line is in the if block!</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="code-right">
+                    <p class="comment">// This is RIGHT!</p>
+                    <pre>if (isRaining) {
+    console.log("Take umbrella");
+    console.log("Wear boots");
+}</pre>
+                    <p class="annotation">Both lines are in the if block</p>
+                </div>
+            </div>
+            <div class="doodle">
+                <p>Always use { } for clarity!</p>
+            </div>
+        </div>
+
+        <div class="note-section">
+            <h3 class="note-title">Error #3: Cascading If vs. Else-If 🌊</h3>
+            <div class="code-note">
+                <div class="code-wrong">
+                    <p class="comment">// This is WRONG!</p>
+                    <pre>// Grade calculator
+if (score >= 90) {
+    grade = "A";
+}
+if (score >= 80) {
+    grade = "B";
+}
+if (score >= 70) {
+    grade = "C";
+}</pre>
+                    <p class="annotation">A score of 95 will get a C grade!</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="code-right">
+                    <p class="comment">// This is RIGHT!</p>
+                    <pre>// Grade calculator
+if (score >= 90) {
+    grade = "A";
+} else if (score >= 80) {
+    grade = "B";
+} else if (score >= 70) {
+    grade = "C";
+}</pre>
+                    <p class="annotation">Now a score of 95 gets an A grade</p>
+                </div>
+            </div>
+            <div class="doodle">
+                <p>Use else-if for mutually exclusive conditions!</p>
+            </div>
+        </div>
+
+        <div class="note-section">
+            <h3 class="note-title">Try It: Fix the Logical Error ✏️</h3>
+            <p>This function should tell if a year is a leap year. Can you fix the logical error?</p>
+
+            <div class="interactive-area">
+                    <textarea id="code-editor">function isLeapYear(year) {
+    // A leap year is divisible by 4
+    // But century years must also be divisible by 400
+
+    if (year % 4 == 0)
+        return true;
+    if (year % 100 == 0)
+        return false;
+    if (year % 400 == 0)
+        return true;
+
+    return false;
+}</textarea>
+                <div class="test-area">
+                    <div class="test-input">
+                        <label for="year-input">Test with year:</label>
+                        <input type="number" id="year-input" value="2000">
+                        <button id="test-btn">Test</button>
+                    </div>
+                    <div id="test-result" class="test-result">
+                        <!-- Results will appear here -->
+                    </div>
+                    <button id="hint-btn">Need a hint?</button>
+                    <div id="hint-text" class="hint-text hidden">
+                        <p>Think about the order of conditions. If a year is divisible by both 4 and 100, which condition runs first?</p>
+                        <p>Also, if a year is divisible by 400, it's also divisible by 100 and 4. Will that code ever run?</p>
+                    </div>
+                    <button id="solution-btn">Show solution</button>
+                    <div id="solution-text" class="solution-text hidden">
+                            <pre>function isLeapYear(year) {
+    // A leap year is divisible by 4
+    // But century years must also be divisible by 400
+
+    if (year % 400 == 0)
+        return true;
+    if (year % 100 == 0)
+        return false;
+    if (year % 4 == 0)
+        return true;
+
+    return false;
+}</pre>
+                        <p>The order matters! Check the most specific condition first (divisible by 400).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="note-section">
+            <h3 class="note-title">Quick Quiz 📝</h3>
+            <div class="quiz-container">
+                <div id="quiz">
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> What's wrong with this code?</p>
+                        <pre>if (temperature = 100) {
+    console.log("Water is boiling");
+}</pre>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> Missing semicolon</label>
+                            <label><input type="radio" name="q1" value="b"> Using = instead of ==</label>
+                            <label><input type="radio" name="q1" value="c"> Nothing is wrong</label>
+                        </div>
+                    </div>
+                    <button id="check-answer">Check Answer</button>
+                    <div id="quiz-feedback" class="hidden"></div>
+                    <button id="next-question" class="hidden">Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="note-section">
+            <h3 class="note-title">My Notes 📒</h3>
+            <div class="my-notes">
+                <p>To avoid logical errors in selection structures:</p>
+                <ol>
+                    <li>Always double-check my comparison operators (==, ===, not =)</li>
+                    <li>Use curly braces {} even for single-line if statements</li>
+                    <li>Think about the order of conditions and use else-if for mutually exclusive options</li>
+                    <li>Test boundary conditions (like 0, 100, etc.)</li>
+                    <li>Draw out the logic flow if I'm confused</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <p>Programming Fundamentals - Spring 2023</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

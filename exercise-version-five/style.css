@@ -1,0 +1,361 @@
+/* Base styles */
+body {
+    font-family: "Patrick Hand", cursive;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23f5f5f5"/><path d="M0 0L100 100M100 0L0 100" stroke="%23e0e0e0" stroke-width="0.5"/></svg>');
+    background-size: 20px 20px;
+}
+
+/* Notebook container */
+.notebook {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 5px;
+    position: relative;
+    background-image: linear-gradient(#f5f5f5 1px, transparent 1px);
+    background-size: 100% 25px;
+}
+
+/* Red margin line */
+.notebook::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #e74c3c;
+}
+
+/* Punch holes */
+.notebook::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-image: radial-gradient(circle, #333 2px, transparent 2px);
+    background-size: 2px 50px;
+    background-repeat: repeat-y;
+}
+
+/* Page header */
+.page-header {
+    margin-bottom: 30px;
+    border-bottom: 2px dashed #3498db;
+    padding-bottom: 15px;
+}
+
+.page-header h1 {
+    font-family: "Architects Daughter", cursive;
+    color: #3498db;
+    margin: 0 0 10px 0;
+    font-size: 2.2em;
+}
+
+.page-header h2 {
+    font-family: "Indie Flower", cursive;
+    color: #e74c3c;
+    margin: 0 0 10px 0;
+    font-size: 1.8em;
+}
+
+.student-info {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    text-align: right;
+}
+
+/* Note sections */
+.note-section {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.note-title {
+    font-family: "Indie Flower", cursive;
+    color: #2c3e50;
+    border-bottom: 1px solid #bdc3c7;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+/* Handwritten list */
+.handwritten-list {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.handwritten-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.handwritten-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #e74c3c;
+}
+
+/* Code notes */
+.code-note {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.code-wrong,
+.code-right {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.code-wrong {
+    background-color: #ffebee;
+    border-left: 3px solid #e74c3c;
+}
+
+.code-right {
+    background-color: #e8f5e9;
+    border-left: 3px solid #2ecc71;
+}
+
+.arrow {
+    font-size: 1.5em;
+    color: #7f8c8d;
+}
+
+pre {
+    font-family: "Courier New", monospace;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 3px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+.comment {
+    color: #7f8c8d;
+    margin: 0;
+    font-style: italic;
+}
+
+.annotation {
+    font-size: 0.9em;
+    color: #e74c3c;
+    margin: 5px 0 0 0;
+}
+
+/* Doodle */
+.doodle {
+    background-color: #fff9c4;
+    padding: 10px 15px;
+    border-radius: 3px;
+    transform: rotate(-1deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    max-width: 300px;
+    font-family: "Indie Flower", cursive;
+}
+
+.doodle p {
+    margin: 5px 0;
+}
+
+/* Sticky note */
+.sticky-note {
+    background-color: #ffeb3b;
+    padding: 15px;
+    transform: rotate(1deg);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 20px 0 20px 40px;
+    font-family: "Indie Flower", cursive;
+}
+
+/* Interactive area */
+.interactive-area {
+    background-color: #f8f9fa;
+    border: 1px dashed #bdc3c7;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#code-editor {
+    width: 100%;
+    height: 150px;
+    font-family: "Courier New", monospace;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.test-area {
+    margin-top: 15px;
+}
+
+.test-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+#year-input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Patrick Hand", cursive;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.test-result {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    min-height: 50px;
+}
+
+.hint-text,
+.solution-text {
+    background-color: #fff9c4;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 10px 0;
+    font-family: "Indie Flower", cursive;
+}
+
+.solution-text pre {
+    font-family: "Courier New", monospace;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Quiz */
+.quiz-container {
+    background-color: #f8f9fa;
+    border: 1px dashed #bdc3c7;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.quiz-question {
+    margin-bottom: 15px;
+}
+
+.quiz-options {
+    margin: 15px 0;
+}
+
+.quiz-options label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#quiz-feedback {
+    padding: 10px;
+    border-radius: 3px;
+    margin: 15px 0;
+}
+
+.feedback-correct {
+    background-color: #e8f5e9;
+    border-left: 3px solid #2ecc71;
+}
+
+.feedback-incorrect {
+    background-color: #ffebee;
+    border-left: 3px solid #e74c3c;
+}
+
+/* My notes */
+.my-notes {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid #3498db;
+}
+
+.my-notes ol {
+    padding-left: 25px;
+}
+
+.my-notes li {
+    margin-bottom: 8px;
+}
+
+/* Page footer */
+.page-footer {
+    margin-top: 40px;
+    border-top: 2px dashed #3498db;
+    padding-top: 15px;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .notebook {
+        padding: 20px;
+    }
+
+    .notebook::before {
+        left: 20px;
+    }
+
+    .notebook::after {
+        display: none;
+    }
+
+    .code-note {
+        flex-direction: column;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+
+    .doodle,
+    .sticky-note {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}
