@@ -1,0 +1,52 @@
+body {
+    background: black;
+    color: limegreen;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+}
+
+.terminal-wrapper {
+    border: 2px solid limegreen;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+header, section {
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    color: lightgreen;
+}
+
+pre {
+    background: #111;
+    padding: 10px;
+    border-left: 3px solid limegreen;
+    overflow-x: auto;
+}
+
+.options label {
+    display: block;
+    margin: 5px 0;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: inherit;
+    background: #222;
+    color: limegreen;
+    border: 1px solid limegreen;
+    cursor: pointer;
+}

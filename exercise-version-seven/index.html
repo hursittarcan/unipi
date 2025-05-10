@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Selection Logic Error Trainer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="terminal-wrapper">
+    <header>
+        <h1>>> Logical Error Trainer v1.0</h1>
+        <p>Type: Selection Structures</p>
+    </header>
+
+    <section class="intro">
+        <p>Welcome to the logic terminal. Your mission is to locate logical errors in <code>if</code>/<code>else if</code>/<code>else</code> structures.</p>
+        <p>This interactive trainer will guide you through 5 practical exercises.</p>
+        <p>Good luck, code warrior.</p>
+    </section>
+
+    <!-- Exercise 1 -->
+    <section class="exercise" id="exercise-0">
+        <h2>Exercise 1</h2>
+        <pre>
+let a = 5;
+
+if (a > 10)
+  console.log("High");
+else if (a > 3)
+  console.log("Medium");
+else
+  console.log("Low");</pre>
+        <p>What will be printed?</p>
+        <div class="options">
+            <label><input type="radio" name="q0" value="0" /> High</label>
+            <label><input type="radio" name="q0" value="1" /> Medium</label>
+            <label><input type="radio" name="q0" value="2" /> Low</label>
+            <label><input type="radio" name="q0" value="3" /> Nothing</label>
+        </div>
+        <div class="feedback" id="f0"></div>
+    </section>
+
+    <!-- Exercise 2 -->
+    <section class="exercise" id="exercise-1">
+        <h2>Exercise 2</h2>
+        <pre>
+let status = "inactive";
+
+if (status === "active")
+  console.log("Running");
+else if (status = "idle")
+  console.log("Idle");
+else
+  console.log("Off");</pre>
+        <p>Where is the error?</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="0" /> Wrong condition order</label>
+            <label><input type="radio" name="q1" value="1" /> '===' should be '=='</label>
+            <label><input type="radio" name="q1" value="2" /> '=' should be '==='</label>
+            <label><input type="radio" name="q1" value="3" /> No error</label>
+        </div>
+        <div class="feedback" id="f1"></div>
+    </section>
+
+    <!-- Exercise 3 -->
+    <section class="exercise" id="exercise-2">
+        <h2>Exercise 3</h2>
+        <pre>
+let temp = 15;
+
+if (temp > 30)
+  console.log("Hot");
+else if (temp > 20)
+  console.log("Warm");
+else if (temp > 10)
+  console.log("Cool");
+else
+  console.log("Cold");</pre>
+        <p>What is printed when temp is 15?</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="0" /> Hot</label>
+            <label><input type="radio" name="q2" value="1" /> Warm</label>
+            <label><input type="radio" name="q2" value="2" /> Cool</label>
+            <label><input type="radio" name="q2" value="3" /> Cold</label>
+        </div>
+        <div class="feedback" id="f2"></div>
+    </section>
+
+    <!-- Exercise 4 -->
+    <section class="exercise" id="exercise-3">
+        <h2>Exercise 4</h2>
+        <pre>
+let signal = "green";
+
+if (signal === "red")
+  console.log("Stop");
+else if (signal === "yellow")
+  console.log("Slow down");
+else
+  console.log("Go");</pre>
+        <p>What is printed?</p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="0" /> Stop</label>
+            <label><input type="radio" name="q3" value="1" /> Slow down</label>
+            <label><input type="radio" name="q3" value="2" /> Go</label>
+            <label><input type="radio" name="q3" value="3" /> Error</label>
+        </div>
+        <div class="feedback" id="f3"></div>
+    </section>
+
+    <!-- Exercise 5 -->
+    <section class="exercise" id="exercise-4">
+        <h2>Exercise 5</h2>
+        <pre>
+let num = 0;
+
+if (num > 0)
+  console.log("Positive");
+else if (num < 0)
+  console.log("Negative");
+else if (num === 0)
+  console.log("Zero");</pre>
+        <p>What is the logic issue?</p>
+        <div class="options">
+            <label><input type="radio" name="q4" value="0" /> Unreachable code</label>
+            <label><input type="radio" name="q4" value="1" /> Last check should be 'else'</label>
+            <label><input type="radio" name="q4" value="2" /> num can't be zero</label>
+            <label><input type="radio" name="q4" value="3" /> Invalid comparison</label>
+        </div>
+        <div class="feedback" id="f4"></div>
+    </section>
+
+    <div class="controls">
+        <button onclick="checkAll()">Check My Answers</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
