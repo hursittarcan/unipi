@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Errors in Python</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Logical Errors in Python</h1>
+        <p class="subtitle">Understanding and fixing logical errors in Python selection structures</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>What are Logical Errors?</h2>
+            <p>Logical errors occur when your code runs without syntax errors but produces incorrect results due to flawed logic.</p>
+            <div class="key-points">
+                <div class="point">
+                    <span class="point-number">01</span>
+                    <p>No error messages</p>
+                </div>
+                <div class="point">
+                    <span class="point-number">02</span>
+                    <p>Code executes completely</p>
+                </div>
+                <div class="point">
+                    <span class="point-number">03</span>
+                    <p>Incorrect output</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="examples">
+            <h2>Common Logical Errors in Python</h2>
+
+            <div class="example-card">
+                <h3>1. Incorrect Comparison Operators</h3>
+                <div class="code-comparison">
+                    <div class="code-wrong">
+                        <h4>Incorrect</h4>
+                        <pre>
+# Check if user is an adult
+age = 25
+if age = 18:
+    print("You are an adult")
+</pre>
+                        <p class="error-note">SyntaxError: invalid syntax</p>
+                        <p class="explanation">In Python, using = (assignment) instead of == (comparison) causes a syntax error, unlike some other languages where it would be a logical error.</p>
+                    </div>
+                    <div class="code-right">
+                        <h4>Correct</h4>
+                        <pre>
+# Check if user is an adult
+age = 25
+if age >= 18:
+    print("You are an adult")
+</pre>
+                        <p class="explanation">Use == for equality comparison and >= for "greater than or equal to".</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h3>2. Incorrect Indentation Logic</h3>
+                <div class="code-comparison">
+                    <div class="code-wrong">
+                        <h4>Incorrect</h4>
+                        <pre>
+# Check weather conditions
+is_raining = True
+is_cold = True
+
+if is_raining:
+    print("Bring an umbrella")
+    if is_cold:
+        print("Bring a jacket")
+print("Wear boots")  # Always executes
+</pre>
+                        <p class="explanation">The "Wear boots" instruction will always execute regardless of weather conditions due to incorrect indentation.</p>
+                    </div>
+                    <div class="code-right">
+                        <h4>Correct</h4>
+                        <pre>
+# Check weather conditions
+is_raining = True
+is_cold = True
+
+if is_raining:
+    print("Bring an umbrella")
+    if is_cold:
+        print("Bring a jacket")
+    print("Wear boots")  # Only if raining
+</pre>
+                        <p class="explanation">Proper indentation ensures "Wear boots" only executes when it's raining.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h3>3. Overlapping Conditions</h3>
+                <div class="code-comparison">
+                    <div class="code-wrong">
+                        <h4>Incorrect</h4>
+                        <pre>
+# Grade calculator
+score = 85
+
+if score >= 70:
+    grade = "C"
+if score >= 80:
+    grade = "B"
+if score >= 90:
+    grade = "A"
+
+print(f"Your grade is {grade}")
+</pre>
+                        <p class="explanation">For score = 85, all conditions are checked independently, resulting in grade = "B" (not "C" as expected).</p>
+                    </div>
+                    <div class="code-right">
+                        <h4>Correct</h4>
+                        <pre>
+# Grade calculator
+score = 85
+
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+elif score >= 70:
+    grade = "C"
+else:
+    grade = "F"
+
+print(f"Your grade is {grade}")
+</pre>
+                        <p class="explanation">Using elif ensures mutually exclusive conditions, giving the correct grade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive">
+            <h2>Fix the Logical Error</h2>
+            <p>This function should determine if a number is prime, but it has a logical error. Can you fix it?</p>
+
+            <div class="code-editor-container">
+                    <textarea id="code-editor" spellcheck="false">def is_prime(num):
+    """Check if a number is prime."""
+    # A prime number is greater than 1 and only
+    # divisible by 1 and itself
+
+    if num <= 1:
+        return False
+
+    # Check if num is divisible by any number from 2 to num-1
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+
+    return True
+</textarea>
+                <div class="test-panel">
+                    <div class="test-input">
+                        <label for="test-number">Test with number:</label>
+                        <input type="number" id="test-number" value="25">
+                        <button id="test-btn">Test</button>
+                    </div>
+                    <div id="test-result" class="test-result"></div>
+                    <button id="hint-btn">Show Hint</button>
+                    <div id="hint-text" class="hint hidden">
+                        <p>Hint: You don't need to check all numbers from 2 to num-1. Think about the largest possible factor of a number.</p>
+                    </div>
+                    <button id="solution-btn">Show Solution</button>
+                    <div id="solution-text" class="solution hidden">
+                        <p>Solution:</p>
+                        <pre>def is_prime(num):
+    """Check if a number is prime."""
+    # A prime number is greater than 1 and only
+    # divisible by 1 and itself
+
+    if num <= 1:
+        return False
+
+    # We only need to check up to the square root of num
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+
+    return True</pre>
+                        <p>The optimization: We only need to check divisibility up to the square root of the number, not all the way to num-1.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz">
+            <h2>Test Your Knowledge</h2>
+            <div id="quiz-container">
+                <div id="question-container">
+                    <p id="question-text">What is the logical error in this code?</p>
+                    <pre id="question-code">
+def check_even_odd(num):
+    if num / 2 == 0:
+        return "Even"
+    else:
+        return "Odd"</pre>
+                    <div id="options-container">
+                        <label class="option">
+                            <input type="radio" name="quiz" value="0">
+                            <span>Missing parentheses in the if condition</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="quiz" value="1">
+                            <span>Using division (/) instead of modulo (%)</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="quiz" value="2">
+                            <span>The function name is incorrect</span>
+                        </label>
+                    </div>
+                </div>
+                <div id="feedback-container" class="hidden"></div>
+                <div class="quiz-buttons">
+                    <button id="check-btn">Check Answer</button>
+                    <button id="next-btn" class="hidden">Next Question</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Student ID: PY12345 | Programming Logic Course</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
