@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Selection Structure Debugger</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+    <h1>🧪 Selection Structure Debugger</h1>
+    <p>Experiment with input values and see how logical errors in <code>if</code>/<code>else</code> conditions affect output behavior.</p>
+</header>
+
+<main>
+    <!-- Case 1: Misordered Conditions -->
+    <section class="exercise">
+        <h2>Case 1 – Condition Order Bug</h2>
+        <p>Try entering an age. The logic is incorrectly ordered.</p>
+        <label>Enter Age: <input type="number" id="age1" /></label>
+        <button onclick="runCase1()">Run Logic</button>
+        <div class="output" id="out1"></div>
+        <div class="bar-box"><div id="bar1" class="bar"></div></div>
+        <pre>
+if (age &lt; 18)
+  show("Child");
+else if (age &lt; 13)
+  show("Kid");
+else
+  show("Adult");
+      </pre>
+    </section>
+
+    <!-- Case 2: Assignment Instead of Comparison -->
+    <section class="exercise">
+        <h2>Case 2 – Assignment Instead of Comparison</h2>
+        <p>This code mistakenly uses <code>=</code> instead of <code>===</code>.</p>
+        <label>Status: <input type="text" id="status" value="inactive" /></label>
+        <button onclick="runCase2()">Run Logic</button>
+        <div class="output" id="out2"></div>
+        <div class="bar-box"><div id="bar2" class="bar"></div></div>
+        <pre>
+if (status = "active")
+  show("Running");
+else
+  show("Stopped");
+      </pre>
+    </section>
+
+    <!-- Case 3: Unreachable Else -->
+    <section class="exercise">
+        <h2>Case 3 – Unreachable Else</h2>
+        <p>Try entering a number. Due to the logic, the last case is never reached.</p>
+        <label>Value: <input type="number" id="val3" /></label>
+        <button onclick="runCase3()">Run Logic</button>
+        <div class="output" id="out3"></div>
+        <div class="bar-box"><div id="bar3" class="bar"></div></div>
+        <pre>
+if (value &gt; 0)
+  show("Positive");
+else if (value &lt; 0)
+  show("Negative");
+else if (value === 0)
+  show("Zero"); // never reached
+      </pre>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 LogicLearning</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
