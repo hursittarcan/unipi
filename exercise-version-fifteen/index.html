@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Data Structures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Python Data Structures</h1>
+        <p>A simple guide for CS101</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Common Data Structures</h2>
+            <p>Python provides several built-in data structures that are essential for programming.</p>
+        </section>
+
+        <section class="data-structure">
+            <h2>Lists</h2>
+            <div class="code-example">
+          <pre><code># Creating a list
+fruits = ["apple", "banana", "cherry"]
+
+# Accessing elements
+print(fruits[0])  # Output: apple
+
+# Adding elements
+fruits.append("orange")
+
+# List length
+print(len(fruits))  # Output: 4</code></pre>
+            </div>
+            <div class="notes">
+                <p>Lists are ordered, mutable collections that can contain elements of different types.</p>
+                <ul>
+                    <li>Access elements with index: <code>list[index]</code></li>
+                    <li>Add elements with <code>append()</code> or <code>insert()</code></li>
+                    <li>Remove elements with <code>remove()</code> or <code>pop()</code></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="data-structure">
+            <h2>Dictionaries</h2>
+            <div class="code-example">
+          <pre><code># Creating a dictionary
+student = {
+  "name": "John",
+  "age": 20,
+  "courses": ["Math", "CS"]
+}
+
+# Accessing values
+print(student["name"])  # Output: John
+
+# Adding new key-value pairs
+student["grade"] = "A"</code></pre>
+            </div>
+            <div class="notes">
+                <p>Dictionaries store key-value pairs and provide fast lookups by key.</p>
+                <ul>
+                    <li>Access values with key: <code>dict[key]</code></li>
+                    <li>Check if key exists: <code>key in dict</code></li>
+                    <li>Get all keys: <code>dict.keys()</code></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="data-structure">
+            <h2>Tuples</h2>
+            <div class="code-example">
+          <pre><code># Creating a tuple
+point = (10, 20)
+
+# Accessing elements
+x, y = point
+print(x)  # Output: 10
+
+# Tuples are immutable
+# This will cause an error:
+# point[0] = 15</code></pre>
+            </div>
+            <div class="notes">
+                <p>Tuples are immutable ordered collections, often used for fixed data.</p>
+                <ul>
+                    <li>Cannot be modified after creation</li>
+                    <li>Faster than lists for iteration</li>
+                    <li>Can be used as dictionary keys</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="quiz">
+            <h2>Quick Quiz</h2>
+            <div class="quiz-question">
+                <p>Which data structure would you use to store a collection of unique elements?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> List</label>
+                    <label><input type="radio" name="q1" value="b"> Dictionary</label>
+                    <label><input type="radio" name="q1" value="c"> Set</label>
+                    <label><input type="radio" name="q1" value="d"> Tuple</label>
+                </div>
+                <button id="check-btn">Check Answer</button>
+                <p id="feedback" class="hidden"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Student ID: 12345 | Python Programming 101</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

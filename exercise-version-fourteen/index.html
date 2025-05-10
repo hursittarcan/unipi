@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Logic Circuit Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1>Logic Circuit Explorer</h1>
+<p>Use the controls below to simulate different logical conditions. Each example contains a typical logical error related to selection structures.</p>
+
+<!-- EXERCISE 1 -->
+<div class="panel">
+    <h2>Exercise 1 – Condition Overlap</h2>
+    <label>Enter a number: <input type="number" id="input1" /></label>
+    <button onclick="run(1)">Run</button>
+    <pre>
+if (x &gt; 50)
+  light = "GREEN";
+if (x &gt; 30)
+  light = "YELLOW";
+else
+  light = "RED";
+    </pre>
+    <div class="lights">
+        <div id="light1_GREEN" class="light">GREEN</div>
+        <div id="light1_YELLOW" class="light">YELLOW</div>
+        <div id="light1_RED" class="light">RED</div>
+    </div>
+    <div id="result1" class="result"></div>
+</div>
+
+<!-- EXERCISE 2 -->
+<div class="panel">
+    <h2>Exercise 2 – Misordered Conditions</h2>
+    <label>Enter age: <input type="number" id="input2" /></label>
+    <button onclick="run(2)">Run</button>
+    <pre>
+if (age &lt; 18)
+  light = "GREEN";
+else if (age &lt; 13)
+  light = "YELLOW";
+else
+  light = "RED";
+    </pre>
+    <div class="lights">
+        <div id="light2_GREEN" class="light">GREEN</div>
+        <div id="light2_YELLOW" class="light">YELLOW</div>
+        <div id="light2_RED" class="light">RED</div>
+    </div>
+    <div id="result2" class="result"></div>
+</div>
+
+<!-- EXERCISE 3 -->
+<div class="panel">
+    <h2>Exercise 3 – Assignment vs Comparison</h2>
+    <label>Status (active/inactive): <input type="text" id="input3" /></label>
+    <button onclick="run(3)">Run</button>
+    <pre>
+if (status = "active")
+  light = "GREEN";
+else
+  light = "RED";
+    </pre>
+    <div class="lights">
+        <div id="light3_GREEN" class="light">GREEN</div>
+        <div id="light3_RED" class="light">RED</div>
+    </div>
+    <div id="result3" class="result"></div>
+</div>
+
+<!-- EXERCISE 4 -->
+<div class="panel">
+    <h2>Exercise 4 – Overlapping Ranges</h2>
+    <label>Enter grade: <input type="number" id="input4" /></label>
+    <button onclick="run(4)">Run</button>
+    <pre>
+if (grade &gt;= 90)
+  light = "GREEN";
+if (grade &gt;= 80)
+  light = "YELLOW";
+else
+  light = "RED";
+    </pre>
+    <div class="lights">
+        <div id="light4_GREEN" class="light">GREEN</div>
+        <div id="light4_YELLOW" class="light">YELLOW</div>
+        <div id="light4_RED" class="light">RED</div>
+    </div>
+    <div id="result4" class="result"></div>
+</div>
+
+<!-- EXERCISE 5 -->
+<div class="panel">
+    <h2>Exercise 5 – Unreachable Else If</h2>
+    <label>Enter value: <input type="number" id="input5" /></label>
+    <button onclick="run(5)">Run</button>
+    <pre>
+if (val &gt; 0)
+  light = "GREEN";
+else if (val === 0)
+  light = "YELLOW";
+else
+  light = "RED";
+    </pre>
+    <div class="lights">
+        <div id="light5_GREEN" class="light">GREEN</div>
+        <div id="light5_YELLOW" class="light">YELLOW</div>
+        <div id="light5_RED" class="light">RED</div>
+    </div>
+    <div id="result5" class="result"></div>
+</div>
+
+<!-- EXERCISE 6 -->
+<div class="panel">
+    <h2>Exercise 6 – Equal Check Mistake</h2>
+    <label>Enter number: <input type="number" id="input6" /></label>
+    <button onclick="run(6)">Run</button>
+    <pre>
+if (num = 5)
+  light = "GREEN";
+else
+  light = "RED";
+    </pre>
+    <div class="lights">
+        <div id="light6_GREEN" class="light">GREEN</div>
+        <div id="light6_RED" class="light">RED</div>
+    </div>
+    <div id="result6" class="result"></div>
+</div>
+
+<footer>
+    <p>&copy; 2025 LogicLab Visual Systems</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
