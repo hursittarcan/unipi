@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Terminal Logic Tester</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🖥️ Terminal Logic Tester</h1>
+  <p>Type numbers and simulate logic errors like a code terminal.</p>
+
+  <div id="console">
+    <div class="logic-case">
+      <h2>> Case 1 – Misordered Logic</h2>
+      <input type="number" id="val1" placeholder="Type number" />
+      <button onclick="run(1)">Run</button>
+      <div class="terminal-output" id="out1">[ waiting input ]</div>
+    </div>
+
+    <div class="logic-case">
+      <h2>> Case 2 – Condition Always True</h2>
+      <input type="text" id="val2" placeholder="Type mode" />
+      <button onclick="run(2)">Run</button>
+      <div class="terminal-output" id="out2">[ waiting input ]</div>
+    </div>
+
+    <div class="logic-case">
+      <h2>> Case 3 – Conflicting Ifs</h2>
+      <input type="number" id="val3" placeholder="Enter score" />
+      <button onclick="run(3)">Run</button>
+      <div class="terminal-output" id="out3">[ waiting input ]</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
