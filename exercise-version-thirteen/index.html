@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logic Flow Evaluator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Logic Flow Evaluator</h1>
+<p>This tool helps you understand how different input values affect selection structures with logical errors.</p>
+
+<form id="logicForm">
+    <!-- Problem 1 -->
+    <fieldset>
+        <legend>Problem 1 – Wrong Order of Conditions</legend>
+        <label for="p1_input">Enter a number:</label>
+        <input type="number" id="p1_input" required>
+        <button type="button" onclick="evaluateProblem1()">Evaluate</button>
+        <div id="p1_result" class="result"></div>
+        <pre>
+if (num &lt; 20)
+  result = "Under 20";
+else if (num &lt; 10)
+  result = "Under 10";
+else
+  result = "20 or more";
+      </pre>
+    </fieldset>
+
+    <!-- Problem 2 -->
+    <fieldset>
+        <legend>Problem 2 – Assignment Instead of Comparison</legend>
+        <label for="p2_input">Enter mode (text):</label>
+        <input type="text" id="p2_input" required>
+        <button type="button" onclick="evaluateProblem2()">Evaluate</button>
+        <div id="p2_result" class="result"></div>
+        <pre>
+if (mode = "test")
+  result = "Test Mode Enabled";
+else
+  result = "Normal Mode";
+      </pre>
+    </fieldset>
+
+    <!-- Problem 3 -->
+    <fieldset>
+        <legend>Problem 3 – Missing Else</legend>
+        <label for="p3_input">Enter grade (0–100):</label>
+        <input type="number" id="p3_input" min="0" max="100" required>
+        <button type="button" onclick="evaluateProblem3()">Evaluate</button>
+        <div id="p3_result" class="result"></div>
+        <pre>
+if (grade &gt;= 90)
+  result = "A";
+if (grade &gt;= 80)
+  result = "B";
+else
+  result = "C";
+      </pre>
+    </fieldset>
+</form>
+
+<footer>
+    <p>Created for educational use – Project 8 – Logical Errors in Selection Structures</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

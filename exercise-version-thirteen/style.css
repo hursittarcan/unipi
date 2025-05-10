@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fcfcfc;
+    color: #333;
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    padding: 5px;
+    width: 200px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 0.9em;
+    overflow-x: auto;
+}
