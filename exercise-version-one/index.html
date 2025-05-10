@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Logical Errors in Selection Structures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Understanding Logical Errors in Selection Structures</h1>
+    <p>An interactive learning tool for programming beginners</p>
+</header>
+
+<main>
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Selection structures (if-else statements) are fundamental in programming, but they can contain logical errors that are difficult to spot. This learning tool will help you identify and fix common logical errors.</p>
+    </section>
+
+    <section id="visualization">
+        <h2>Visualizing Selection Structures</h2>
+        <div class="visualization-container">
+            <div class="code-editor">
+                <h3>Code</h3>
+                <div class="code-area">
+                        <pre id="code-display">
+if (age >= 18) {
+    console.log("You can vote!");
+} else {
+    console.log("You cannot vote yet.");
+}</pre>
+                </div>
+                <div class="input-area">
+                    <label for="age-input">Enter age: </label>
+                    <input type="number" id="age-input" value="16">
+                    <button id="run-btn">Run Code</button>
+                </div>
+            </div>
+            <div class="execution-flow">
+                <h3>Execution Flow</h3>
+                <div id="flow-diagram" class="flow-diagram">
+                    <!-- Flow diagram will be rendered here -->
+                </div>
+                <div id="output" class="output">
+                    <p>Output will appear here...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="common-errors">
+        <h2>Common Logical Errors</h2>
+        <div class="error-examples">
+            <div class="error-card">
+                <h3>Incorrect Comparison Operators</h3>
+                <p>Using the wrong comparison operator can lead to unexpected results.</p>
+                <div class="example-container">
+                    <div class="code-snippet">
+                            <pre>// Intended: Check if age is exactly 18
+if (age = 18) { // WRONG! This assigns 18 to age
+    console.log("You're 18!");
+}</pre>
+                    </div>
+                    <div class="correction">
+                            <pre>// Correct version
+if (age === 18) { // Correct comparison
+    console.log("You're 18!");
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-card">
+                <h3>Boundary Conditions</h3>
+                <p>Errors often occur at the boundaries of conditions.</p>
+                <div class="example-container">
+                    <div class="code-snippet">
+                            <pre>// Intended: Check if score is passing (60 or above)
+if (score > 60) { // WRONG! Excludes exactly 60
+    console.log("You passed!");
+}</pre>
+                    </div>
+                    <div class="correction">
+                            <pre>// Correct version
+if (score >= 60) { // Includes 60
+    console.log("You passed!");
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-card">
+                <h3>Overlapping Conditions</h3>
+                <p>Multiple conditions that overlap can cause unexpected behavior.</p>
+                <div class="example-container">
+                    <div class="code-snippet">
+                            <pre>// Grading system
+if (score >= 90) {
+    grade = "A";
+}
+if (score >= 80) { // WRONG! This will always execute if score >= 90
+    grade = "B";
+}</pre>
+                    </div>
+                    <div class="correction">
+                            <pre>// Correct version
+if (score >= 90) {
+    grade = "A";
+} else if (score >= 80) {
+    grade = "B";
+}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive-exercise">
+        <h2>Interactive Exercise</h2>
+        <p>Fix the logical errors in the following code:</p>
+
+        <div class="exercise-container">
+            <div class="problem-statement">
+                <p><strong>Problem:</strong> Write a program that categorizes a person based on their age:</p>
+                <ul>
+                    <li>Under 13: Child</li>
+                    <li>13-19: Teenager</li>
+                    <li>20-64: Adult</li>
+                    <li>65 and older: Senior</li>
+                </ul>
+            </div>
+
+            <div class="code-editor">
+                    <textarea id="exercise-code">if (age < 13) {
+    category = "Child";
+}
+if (age > 13) {
+    category = "Teenager";
+}
+if (age > 19) {
+    category = "Adult";
+}
+if (age > 65) {
+    category = "Senior";
+}</textarea>
+                <div class="exercise-controls">
+                    <button id="check-btn">Check Solution</button>
+                    <button id="hint-btn">Get Hint</button>
+                    <button id="solution-btn">Show Solution</button>
+                </div>
+            </div>
+
+            <div id="exercise-feedback" class="feedback">
+                <p>Try to identify and fix the logical errors in the code above.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz">
+        <h2>Test Your Knowledge</h2>
+        <div class="quiz-container">
+            <div id="quiz-question" class="quiz-question">
+                <p><strong>Question 1:</strong> What is wrong with the following code?</p>
+                <pre>if (temperature = 100) {
+    console.log("Water is boiling");
+}</pre>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q1" value="a"> A) The temperature variable is not defined
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="b"> B) Using = (assignment) instead of == or === (comparison)
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="c"> C) Missing semicolon after the if condition
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="d"> D) The console.log statement is incorrect
+                    </label>
+                </div>
+                <button id="next-question">Next Question</button>
+            </div>
+            <div id="quiz-feedback" class="quiz-feedback">
+                <p>Select an answer and click "Next Question".</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Learning Object: Logical Errors in Selection Structures</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
