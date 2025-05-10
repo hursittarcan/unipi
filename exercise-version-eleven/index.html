@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logic Debug Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>📝 Logic Debug Board</h1>
+    <p>This worksheet presents JavaScript code involving <code>if</code>, <code>else if</code>, and <code>else</code> statements. Choose the correct explanation below each snippet.</p>
+</header>
+
+<main id="quiz-board">
+    <!-- Exercise 1 -->
+    <section class="exercise" id="ex0">
+        <h2>1. Grade Classification</h2>
+        <pre>
+let grade = 92;
+
+if (grade > 90)
+  console.log("A");
+else if (grade > 80)
+  console.log("B");
+else
+  console.log("C");
+      </pre>
+        <p>Which message is printed?</p>
+        <label><input type="radio" name="q0" value="0"> B</label><br>
+        <label><input type="radio" name="q0" value="1"> A</label><br>
+        <label><input type="radio" name="q0" value="2"> C</label><br>
+        <label><input type="radio" name="q0" value="3"> Nothing</label><br>
+        <button onclick="checkAnswer(0)">Check</button>
+        <div class="feedback" id="f0"></div>
+    </section>
+
+    <!-- Exercise 2 -->
+    <section class="exercise" id="ex1">
+        <h2>2. Status Check</h2>
+        <pre>
+let isReady = false;
+
+if (isReady = true)
+  console.log("Ready");
+else
+  console.log("Not Ready");
+      </pre>
+        <p>What is wrong here?</p>
+        <label><input type="radio" name="q1" value="0"> Missing semicolon</label><br>
+        <label><input type="radio" name="q1" value="1"> Comparison should be '=='</label><br>
+        <label><input type="radio" name="q1" value="2"> '=' should be '==='</label><br>
+        <label><input type="radio" name="q1" value="3"> Nothing is wrong</label><br>
+        <button onclick="checkAnswer(1)">Check</button>
+        <div class="feedback" id="f1"></div>
+    </section>
+
+    <!-- Exercise 3 -->
+    <section class="exercise" id="ex2">
+        <h2>3. Temperature Decision</h2>
+        <pre>
+let temp = 30;
+
+if (temp > 40)
+  console.log("Hot");
+else if (temp > 20)
+  console.log("Warm");
+else
+  console.log("Cold");
+      </pre>
+        <p>What is printed?</p>
+        <label><input type="radio" name="q2" value="0"> Hot</label><br>
+        <label><input type="radio" name="q2" value="1"> Warm</label><br>
+        <label><input type="radio" name="q2" value="2"> Cold</label><br>
+        <label><input type="radio" name="q2" value="3"> Nothing</label><br>
+        <button onclick="checkAnswer(2)">Check</button>
+        <div class="feedback" id="f2"></div>
+    </section>
+
+    <!-- Exercise 4 -->
+    <section class="exercise" id="ex3">
+        <h2>4. Number Match</h2>
+        <pre>
+let num = 10;
+
+if (num > 10)
+  console.log("Greater");
+else if (num === 10)
+  console.log("Equal");
+else
+  console.log("Smaller");
+      </pre>
+        <p>What is printed?</p>
+        <label><input type="radio" name="q3" value="0"> Greater</label><br>
+        <label><input type="radio" name="q3" value="1"> Equal</label><br>
+        <label><input type="radio" name="q3" value="2"> Smaller</label><br>
+        <label><input type="radio" name="q3" value="3"> Error</label><br>
+        <button onclick="checkAnswer(3)">Check</button>
+        <div class="feedback" id="f3"></div>
+    </section>
+</main>
+
+<footer>
+    <p>End of worksheet. Refresh the page to try again.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
