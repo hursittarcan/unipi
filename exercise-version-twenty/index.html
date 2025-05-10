@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Logic Trainer - Interactive Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧠 Logic Trainer Studio</h1>
+    <p>Explore interactive examples of logical errors in selection structures.</p>
+  </header>
+
+  <main>
+    <section class="exercise" id="ex1">
+      <h2>Exercise 1 – Grade Classifier</h2>
+      <label>Score:
+        <input type="number" id="scoreInput" />
+      </label>
+      <button onclick="runLogic(1)">Check</button>
+      <div class="feedback" id="feedback1"></div>
+      <pre>
+if (score &gt; 90) grade = "A";
+if (score &gt; 80) grade = "B";
+else grade = "C";
+      </pre>
+    </section>
+
+    <section class="exercise" id="ex2">
+      <h2>Exercise 2 – Access Control</h2>
+      <label>Enter role:
+        <input type="text" id="roleInput" />
+      </label>
+      <button onclick="runLogic(2)">Check</button>
+      <div class="feedback" id="feedback2"></div>
+      <pre>
+if (role = "admin") access = true;
+else access = false;
+      </pre>
+    </section>
+
+    <section class="exercise" id="ex3">
+      <h2>Exercise 3 – Age Group</h2>
+      <label>Age:
+        <input type="number" id="ageInput" />
+      </label>
+      <button onclick="runLogic(3)">Check</button>
+      <div class="feedback" id="feedback3"></div>
+      <pre>
+if (age &lt; 18) group = "Teen";
+else if (age &lt; 13) group = "Child";
+else group = "Adult";
+      </pre>
+    </section>
+
+    <section class="exercise" id="ex4">
+      <h2>Exercise 4 – Temperature Status</h2>
+      <label>Temperature (°C):
+        <input type="number" id="tempInput" />
+      </label>
+      <button onclick="runLogic(4)">Check</button>
+      <div class="feedback" id="feedback4"></div>
+      <pre>
+if (temp &gt; 35) status = "Hot";
+if (temp &gt; 20) status = "Warm";
+else status = "Cool";
+      </pre>
+    </section>
+
+    <section class="exercise" id="ex5">
+      <h2>Exercise 5 – User Login</h2>
+      <label>Logged in (yes/no):
+        <input type="text" id="loginInput" />
+      </label>
+      <button onclick="runLogic(5)">Check</button>
+      <div class="feedback" id="feedback5"></div>
+      <pre>
+if (loggedIn === "yes")
+  message = "Welcome";
+if (loggedIn === "no")
+  message = "Goodbye";
+else
+  message = "Unknown";
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Logic Studio © 2025 | Made for learning conditional logic</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

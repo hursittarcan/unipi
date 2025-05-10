@@ -1,0 +1,325 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f2f7;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+header {
+  background: #0066cc;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+main {
+  max-width: 960px;
+  margin: auto;
+  padding: 30px;
+}
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+.exercise {
+  background: white;
+  border-left: 6px solid #0077cc;
+  margin: 20px 0;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+.output-box {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccd;
+  background: #eef;
+}
+pre {
+  background: #f4f4f4;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  border-left: 4px solid #ccc;
+  overflow-x: auto;
+}
+
+.input-style-1 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-2 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-3 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-4 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-5 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-6 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-7 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-8 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-9 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-10 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-11 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-12 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-13 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-14 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-15 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-16 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-17 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-18 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-19 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-20 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-21 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-22 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-23 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-24 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-25 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-26 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-27 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-28 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-29 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-30 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-31 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-32 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-33 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-34 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-35 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-36 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-37 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-38 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-39 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.input-style-40 {
+  padding: 6px;
+  border: 1px solid #aaa;
+  width: 200px;
+  margin-bottom: 10px;
+}
