@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Color Logic Debugger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎨 Color Logic Debugger</h1>
+    <p>Explore logical errors using colored blocks. Enter values and see how logic behaves.</p>
+  </header>
+
+  <main id="container">
+    <!-- Six Logic Blocks -->
+    <div class="logic-block" id="block1">
+      <h2>Logic Test 1 – Overwritten Conditions</h2>
+      <input type="number" id="input1" placeholder="Enter a number">
+      <button onclick="runLogic(1)">Run</button>
+      <pre>if (x &gt; 60) color = "green";
+if (x &gt; 30) color = "blue";
+else color = "red";</pre>
+      <div class="color-box" id="color1">No Output</div>
+    </div>
+
+    <div class="logic-block" id="block2">
+      <h2>Logic Test 2 – Missed Branch</h2>
+      <input type="number" id="input2" placeholder="Enter age">
+      <button onclick="runLogic(2)">Run</button>
+      <pre>if (age &lt; 18) color = "yellow";
+else if (age &lt; 12) color = "orange";
+else color = "purple";</pre>
+      <div class="color-box" id="color2">No Output</div>
+    </div>
+
+    <div class="logic-block" id="block3">
+      <h2>Logic Test 3 – Wrong Assignment</h2>
+      <input type="text" id="input3" placeholder="Enter status">
+      <button onclick="runLogic(3)">Run</button>
+      <pre>if (status = "on") color = "green";
+else color = "red";</pre>
+      <div class="color-box" id="color3">No Output</div>
+    </div>
+
+    <div class="logic-block" id="block4">
+      <h2>Logic Test 4 – Shadowed Ifs</h2>
+      <input type="number" id="input4" placeholder="Enter grade">
+      <button onclick="runLogic(4)">Run</button>
+      <pre>if (grade &gt;= 90) color = "gold";
+if (grade &gt;= 80) color = "silver";
+else color = "bronze";</pre>
+      <div class="color-box" id="color4">No Output</div>
+    </div>
+
+    <div class="logic-block" id="block5">
+      <h2>Logic Test 5 – Unreachable Else</h2>
+      <input type="number" id="input5" placeholder="Enter value">
+      <button onclick="runLogic(5)">Run</button>
+      <pre>if (val &gt; 0) color = "lime";
+else if (val === 0) color = "cyan";
+else color = "gray";</pre>
+      <div class="color-box" id="color5">No Output</div>
+    </div>
+
+    <div class="logic-block" id="block6">
+      <h2>Logic Test 6 – Bad Comparison</h2>
+      <input type="number" id="input6" placeholder="Enter number">
+      <button onclick="runLogic(6)">Run</button>
+      <pre>if (num = 10) color = "blue";
+else color = "black";</pre>
+      <div class="color-box" id="color6">No Output</div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
